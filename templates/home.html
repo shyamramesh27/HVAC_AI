@@ -1,0 +1,81 @@
+<html>
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width,intial-scale=1.0">
+        <title>ENERGY EFFICIENCY CALCULATOR</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link rel="stylesheet" href="../static/style.css">
+        
+    </head>
+<body>
+<div class='cointainer'>
+<div class='head page'>
+    <h1 class='text'>ENERGY EFFICIENCY CALCULATOR</h1>
+</div>
+    
+<div class='formpage'>
+<form action="/" method="POST">
+    <table>
+        <tr>
+            <th class="row">RELATIVE COMPACTNESS</th>
+            <th><input type="number" name="relative_compactness"><br></th>
+        </tr>
+        <tr>
+            <th class="row">SURFACE AREA</th>
+            <th><input type="number" name="surface_area"><br></th>
+        </tr>
+        <tr>
+            <th class="row">WALL AREA</th>
+            <th><input type="number" name="wall_area"><br></th>
+        </tr>
+        <tr>
+            <th class="row">ROOF AREA</th>
+            <th><input type="number" name="roof_area"><br></th>
+        </tr>
+        <tr>
+            <th class="row">OVERALL HEIGHT</th>
+            <th><input type="number" name="overall_height"><br></th>
+        </tr>
+        <tr>
+            <th class="row">ORIENTATION</th>
+            <th><input type="number" name="orientation"><br></th>
+        </tr>
+        <tr>
+            <th class="row">GLAZING AREA</th>
+            <th><input type="number" name="glazing_area"><br></th>
+        </tr>
+        <tr>
+            <th class="row">GLAZING AREA DISTRIBUTION</th>
+            <th><input type="number" name="glazing_area_distribution"><br></th>
+        </tr>
+    </table>
+    <div class="submitdiv">
+        <button class="submit" type="submit" value="submit">CALCULATE</button></div>
+    
+</form>
+    </div>
+
+
+    
+{% if flag==1 %}
+<div class="result">
+<p>HEATING LOAD : {{HL}}</p>
+<p>COOLING LOAD : {{CL}}</p>
+</div>
+{% endif %}
+{% if flag==0 %}
+<div class='erresult'>
+<p>{{err}}</p>
+</div>
+{% endif %}
+
+<div class='devp'>
+<h2>DEVELOPER SECTION : 
+    <a href='/logs'>VIEW LOGS</a></h2>
+</div>
+    </div>
+</body>
+</html>
